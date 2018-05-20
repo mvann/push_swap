@@ -6,7 +6,7 @@
 #    By: mvann <mvann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 14:11:42 by mvann             #+#    #+#              #
-#    Updated: 2018/05/19 13:54:28 by mvann            ###   ########.fr        #
+#    Updated: 2018/05/20 15:40:56 by mvann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC = push_swap.c\
 	swap.c\
 	rotate.c\
 	push.c\
-	helper_funcs.c
+	helper_funcs.c\
+	parse.c
 
 .PHONY: test all clean fclean re
 

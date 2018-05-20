@@ -6,35 +6,47 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 13:47:33 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/19 17:47:09 by mvann            ###   ########.fr       */
+/*   Updated: 2018/05/20 15:56:33 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	print_int_list(t_list *l)
+{
+	while (l)
+	{
+		ft_printf("%i\n", *(int*)l->content);
+		l = l->next;
+	}
+}
+
 int		is_valid(char *s)
 {
-	int		i
+	int		i;
 	long	int_max;
 	long	long_form;
 
-	int_max = 2147483647
-	long_form = ft_atol(av[i]);
-
+	int_max = 2147483647;
+	long_form = ft_atol(s);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < (int)ft_strlen(s))
 	{
-		if (!(i == 0 && (s[i] == '+' || s[i] == '-')))
-		if (s[i]
+		if (!ft_isdigit(s[i]))
+			if (i > 0 || (s[i] != '+' && s[i] != '-'))
+				return (0);
+		i++;
 	}
-	if(ft_strlen(s) > 10 ||
+	if(ft_strlen(s) > 11 ||
 	long_form > int_max || long_form < (int_max + 1) * -1)
+		return (0);
+	return (1);
 }
 
 void	error()
 {
 	ft_printf("Error\n");
-	exit();
+	exit(0);
 }
 
 int		sorted(t_list *l)
