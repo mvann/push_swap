@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:56:32 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/19 13:54:18 by mvann            ###   ########.fr       */
+/*   Updated: 2018/05/19 17:23:37 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ int				derotate(t_list **head);
 int				push(t_list **l1, t_list **l2);
 t_list			*pop(t_list **l);
 int				sorted(t_list *l);
+
+void			error();
+int				sorted(t_list *l);
+long			ft_atol(const char *str);
+
+
 
 
 #endif
