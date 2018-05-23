@@ -6,13 +6,13 @@
 #    By: mvann <mvann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 14:11:42 by mvann             #+#    #+#              #
-#    Updated: 2018/05/20 15:40:56 by mvann            ###   ########.fr        #
+#    Updated: 2018/05/23 12:40:32 by mvann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS = -Wall -Wextra -Werror
 LIBFT = -L libft/ -lft
-NAME = push_swap
+PUSH_SWAP = push_swap
 CHECKER = checker
 SRC = push_swap.c\
 	swap.c\
@@ -20,24 +20,40 @@ SRC = push_swap.c\
 	push.c\
 	helper_funcs.c\
 	parse.c
+CHECKER_SRC = checker.c\
+	swap.c\
+	rotate.c\
+	push.c\
+	helper_funcs.c\
+	parse.c
+# PUSH_SWAP_SRC = push_swap.c
+# 	$(SRC)
+# CHECKER_SRC = checker.c
+# 	$(SRC)
 
-.PHONY: test all clean fclean re
+.PHONY: test library all clean fclean re
 
-test:
-	@gcc $(FLAGS) -o $(NAME) $(SRC) $(LIBFT)
+# test:
+	# @gcc $(FLAGS) -o $(NAME) $(SRC) $(LIBFT)
 
-all: $(NAME)
+all: library $(PUSH_SWAP) $(CHECKER)
 
-$(NAME):
-	@cd libft && make
-	@gcc $(FLAGS) -o $(NAME) $(SRC) $(LIBFT)
+library:
+	@cd libft/ && make
+
+$(PUSH_SWAP):
+	@gcc $(FLAGS) -o $(PUSH_SWAP) $(SRC) $(LIBFT)
+
+$(CHECKER):
+	@gcc $(FLAGS) -o $(CHECKER) $(CHECKER_SRC) $(LIBFT)
 
 clean:
 	@rm -f $(SRC:.c=.o)
 	@cd libft/ && make clean
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(PUSH_SWAP)
+	@rm -f $(CHECKER)
 	@cd libft/ && make fclean
 
 re: fclean all
