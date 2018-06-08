@@ -39,24 +39,54 @@ int		get_command_num(char *str)
 	return (0);
 }
 
+void	run_command(t_env *env, int command)
+{
+	if (command == SA)
+		swap(&(env->p_a));
+	else if (command == SB)
+		swap(&(env->p_b));
+	else if (command == SS)
+		swap_two(&(env->p_a), &(env->p_b));
+	else if (command == PA)
+		push(&(env->p_a), &(env->p_b));
+	else if (command == PB)
+		push(&(env->p_b), &(env->p_a));
+	else if (command == RA)
+		rotate(&(env->p_a));
+	else if (command == RB)
+		rotate(&(env->p_b));
+	else if (command == RR)
+		rotate_two(&(env->p_a), &(env->p_b));
+	else if (command == RRA)
+		derotate(&(env->p_a));
+	else if (command == RRB)
+		derotate(&(env->p_b));
+	else if (command == RRR)
+		derotate_two(&(env->p_a), &(env->p_b));
+}
+
 int	main(int ac, char **av)
 {
-	t_env	*env;
+	t_env	env;
 	int		command;
+	char	*str;
 
-	env = (t_env *)ft_memalloc(sizeof (t_env));
-	char *str;
 	str = NULL;
-
 	ac--;
 	av++;
-	env->p_a = parse_list(ac, av);
+	env.p_a = parse_list(ac, av);
+	print_int_list(env.p_a);
 	while (get_next_line(1, &str))
 	{
 		if (!(command = get_command_num(str)))
 			error();
 		ft_printf("s:%s, i:%i,\n", str, command);
-		// run_command(env, command);
+		run_command(&env, command);
 	}
+	if (sorted(env.p_a))
+		sort_success();
+	else
+		sort_failure();
+	print_int_list(env.p_a);
 	return (0);
 }
