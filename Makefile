@@ -6,7 +6,7 @@
 #    By: mvann <mvann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 14:11:42 by mvann             #+#    #+#              #
-#    Updated: 2018/05/23 12:40:32 by mvann            ###   ########.fr        #
+#    Updated: 2018/06/07 18:56:43 by mvann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ CHECKER_SRC = checker.c\
 
 .PHONY: test library all clean fclean re
 
-# test:
-	# @gcc $(FLAGS) -o $(NAME) $(SRC) $(LIBFT)
+test: $(PUSH_SWAP) $(CHECKER)
 
 all: library $(PUSH_SWAP) $(CHECKER)
 

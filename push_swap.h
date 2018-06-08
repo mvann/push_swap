@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:56:32 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/20 15:56:22 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/07 19:33:20 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 # include "libft/libft.h"
 # include "libft/ft_printf/ft_printf.h"
 # include <stdlib.h>
+
+# define SA 1
+# define SB 2
+# define SS 3
+# define PA 4
+# define PB 5
+# define RA 6
+# define RB 7
+# define RR 8
+# define RRA 9
+# define RRB 10
+# define RRR 11
 
 typedef struct	s_env
 {
