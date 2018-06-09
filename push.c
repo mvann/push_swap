@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 13:21:02 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/19 13:43:21 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/08 14:45:20 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		push(t_list **l1, t_list **l2)
 {
 	t_list *tmp;
 
-	if (!l1 || !l2 || !(tmp = pop(l2)))
+	if (!l2 || !(tmp = pop(l2)))
 		return (0);
 	ft_lstadd(l1, tmp);
 	return (1);

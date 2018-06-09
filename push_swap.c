@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:53:38 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/20 15:56:27 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/08 17:27:19 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int ac, char **av)
 	ac--;
 	av++;
 	env.p_a = parse_list(ac, av);
+	
 	print_int_list(env.p_a);
 
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 12:40:53 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/07 19:39:52 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/08 14:42:22 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ int	main(int ac, char **av)
 	av++;
 	env.p_a = parse_list(ac, av);
 	print_int_list(env.p_a);
+	ft_printf("---\n");
+	print_int_list(env.p_b);
+	ft_printf("---\n");
 	while (get_next_line(1, &str))
 	{
 		if (!(command = get_command_num(str)))
@@ -84,9 +87,11 @@ int	main(int ac, char **av)
 		run_command(&env, command);
 	}
 	if (sorted(env.p_a))
-		sort_success();
+		ft_printf("OK\n");
 	else
-		sort_failure();
+		ft_printf("KO\n");
 	print_int_list(env.p_a);
+	ft_printf("---\n");
+	print_int_list(env.p_b);
 	return (0);
 }
