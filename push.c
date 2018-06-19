@@ -6,17 +6,17 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 13:21:02 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/08 14:45:20 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/14 13:00:14 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		push(t_list **l1, t_list **l2)
+int		push(t_list **l1, t_list **l2, int	len_l2)
 {
 	t_list *tmp;
 
-	if (!l2 || !(tmp = pop(l2)))
+	if (len_l2 < 1 || !l2 || !(tmp = pop(l2)))
 		return (0);
 	ft_lstadd(l1, tmp);
 	return (1);

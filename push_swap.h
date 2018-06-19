@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:56:32 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/07 19:33:20 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/14 12:58:26 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct	s_env
 {
 	t_list		*p_a;
 	t_list		*p_b;
+	int			len_a;
+	int			len_b;
 }				t_env;
 
 int				swap(t_list **p_head_adr);
