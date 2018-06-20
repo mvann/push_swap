@@ -75,23 +75,23 @@ int	main(int ac, char **av)
 	ac--;
 	av++;
 	env.p_a = parse_list(ac, av);
-	print_int_list(env.p_a);
-	ft_printf("---\n");
-	print_int_list(env.p_b);
-	ft_printf("---\n");
-	while (get_next_line(1, &str))
+	// print_int_list(env.p_a);
+	// ft_printf("---\n");
+	// print_int_list(env.p_b);
+	// ft_printf("---\n");
+	while (get_next_line(0, &str))
 	{
 		if (!(command = get_command_num(str)))
 			error();
-		ft_printf("s:%s, i:%i,\n", str, command);
+		// ft_printf("s:%s, i:%i,\n", str, command);
 		run_command(&env, command);
 	}
 	if (sorted(env.p_a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	print_int_list(env.p_a);
-	ft_printf("---\n");
-	print_int_list(env.p_b);
+	// print_int_list(env.p_a);
+	// ft_printf("---\n");
+	// print_int_list(env.p_b);
 	return (0);
 }

@@ -35,6 +35,8 @@ typedef struct	s_env
 	t_list		*p_b;
 	int			len_a;
 	int			len_b;
+	int			*command_queue;
+	int			command_i;
 }				t_env;
 
 int				swap(t_list **p_head_adr);

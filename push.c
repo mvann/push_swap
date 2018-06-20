@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-int		push(t_list **l1, t_list **l2, int	len_l2)
+int		push(t_list **l1, t_list **l2)
 {
 	t_list *tmp;
 
-	if (len_l2 < 1 || !l2 || !(tmp = pop(l2)))
+	if (!l2 || !(tmp = pop(l2)))
 		return (0);
 	ft_lstadd(l1, tmp);
 	return (1);
