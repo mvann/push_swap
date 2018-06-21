@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:53:38 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/20 18:02:50 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/20 20:24:54 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	int_in_lst_at(t_list *lst, int i)
 {
-	return *((int *)(ft_lstat(i, lst)->content));
+	return (*((int *)(ft_lstat(i, lst)->content)));
 }
 
 int	get_median(t_list *lst, int n)
