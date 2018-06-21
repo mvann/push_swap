@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 13:47:33 by mvann             #+#    #+#             */
-/*   Updated: 2018/05/20 15:56:33 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/20 17:49:43 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,25 @@ int		is_valid(char *s)
 
 void	error()
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(0);
+}
+
+int		section_sorted(t_list *l, int n)
+{
+	int i;
+	int tmp;
+
+	i = 0;
+	tmp = *(int*)(l->content);
+	while (i < n - 1)
+	{
+		if (*(int*)l->next->content < tmp)
+			return (0);
+		tmp = *(int*)l->next->content;
+		l = l->next;
+	}
+	return (1);
 }
 
 int		sorted(t_list *l)
