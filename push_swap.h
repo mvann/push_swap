@@ -6,12 +6,12 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:56:32 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/20 17:50:49 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/21 14:11:37 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -58,8 +58,13 @@ void			error();
 int				section_sorted(t_list *l, int n);
 int				sorted(t_list *l);
 long			ft_atol(const char *str);
-void			print_int_list(t_list *l);
 
 t_list			*parse_list(int ac, char **av);
+
+void			print_int_list(t_list *l);
+int				int_in_lst_at(t_list *lst, int i);
+int				get_median(t_list *lst, int n);
+int				get_mid(int n1, int n2, int n3);
+void			add_command(t_env *env, int command);
 
 #endif

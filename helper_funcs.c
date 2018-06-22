@@ -6,20 +6,11 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 13:47:33 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/20 17:49:43 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/21 14:05:32 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_int_list(t_list *l)
-{
-	while (l)
-	{
-		ft_printf("%i\n", *(int*)l->content);
-		l = l->next;
-	}
-}
 
 int		is_valid(char *s)
 {
@@ -37,13 +28,13 @@ int		is_valid(char *s)
 				return (0);
 		i++;
 	}
-	if(ft_strlen(s) > 11 ||
+	if (ft_strlen(s) > 11 ||
 	long_form > int_max || long_form < (int_max + 1) * -1)
 		return (0);
 	return (1);
 }
 
-void	error()
+void	error(void)
 {
 	write(2, "Error\n", 6);
 	exit(0);

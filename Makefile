@@ -6,7 +6,7 @@
 #    By: mvann <mvann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 14:11:42 by mvann             #+#    #+#              #
-#    Updated: 2018/06/20 19:21:24 by mvann            ###   ########.fr        #
+#    Updated: 2018/06/21 16:12:24 by mvann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,14 @@ SRC = push_swap.c\
 	rotate.c\
 	push.c\
 	helper_funcs.c\
+	more_helper_funcs.c\
 	parse.c
 CHECKER_SRC = checker.c\
 	swap.c\
 	rotate.c\
 	push.c\
 	helper_funcs.c\
+	more_helper_funcs.c\
 	parse.c
 # PUSH_SWAP_SRC = push_swap.c
 # 	$(SRC)

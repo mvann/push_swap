@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 12:40:53 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/20 14:13:34 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/21 16:27:35 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	run_command(t_env *env, int command)
 		derotate_two(&(env->p_a), &(env->p_b));
 }
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_env	env;
 	int		command;
@@ -75,13 +75,16 @@ int	main(int ac, char **av)
 	ac--;
 	av++;
 	env.p_a = parse_list(ac, av);
+	env.len_a = ac;
+	env.len_b = 0;
 	while (get_next_line(0, &str))
 	{
 		if (!(command = get_command_num(str)))
 			error();
+
 		run_command(&env, command);
 	}
-	if (sorted(env.p_a))
+	if (sorted(env.p_a) && env.p_b == NULL)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
