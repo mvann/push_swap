@@ -74,19 +74,22 @@ int		main(int ac, char **av)
 	str = NULL;
 	ac--;
 	av++;
-	env.p_a = parse_list(ac, av);
-	env.len_a = ac;
-	env.len_b = 0;
-	while (get_next_line(0, &str))
+	if (ac >= 1)
 	{
-		if (!(command = get_command_num(str)))
-			error();
-
-		run_command(&env, command);
+		env.p_a = parse_list(ac, av);
+		env.len_a = ac;
+		env.len_b = 0;
+		while (get_next_line(0, &str))
+		{
+			if (!(command = get_command_num(str)))
+				error();
+			run_command(&env, command);
+			free(str);
+		}
+		if (sorted(env.p_a) && env.p_b == NULL)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
 	}
-	if (sorted(env.p_a) && env.p_b == NULL)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
 	return (0);
 }
