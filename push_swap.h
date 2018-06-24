@@ -6,7 +6,7 @@
 /*   By: mvann <mvann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:56:32 by mvann             #+#    #+#             */
-/*   Updated: 2018/06/21 14:11:37 by mvann            ###   ########.fr       */
+/*   Updated: 2018/06/23 17:57:14 by mvann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,16 @@ int				rotate(t_list **head);
 int				derotate_two(t_list **a, t_list **b);
 int				derotate(t_list **head);
 
+int				rotate_a(t_env *env);
+void			rotate_b(t_env *env);
+int				rotate_both(t_env *env);
+int				derotate_a(t_env *env);
+
 int				push(t_list **l1, t_list **l2);
 t_list			*pop(t_list **l);
+
+void			push_a(t_env *env);
+void			push_b(t_env *env);
 
 int				is_valid(char *s);
 void			error();
@@ -66,5 +74,7 @@ int				int_in_lst_at(t_list *lst, int i);
 int				get_median(t_list *lst, int n);
 int				get_mid(int n1, int n2, int n3);
 void			add_command(t_env *env, int command);
+
+void			small_algorithm(t_env *env, int n);
 
 #endif

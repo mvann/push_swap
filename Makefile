@@ -6,7 +6,7 @@
 #    By: mvann <mvann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 14:11:42 by mvann             #+#    #+#              #
-#    Updated: 2018/06/21 16:12:24 by mvann            ###   ########.fr        #
+#    Updated: 2018/06/23 16:13:43 by mvann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,23 @@ CHECKER = checker
 SRC = push_swap.c\
 	swap.c\
 	rotate.c\
+	more_rotate.c\
 	push.c\
+	more_push.c\
 	helper_funcs.c\
 	more_helper_funcs.c\
-	parse.c
+	parse.c\
+	small_algorithm.c
 CHECKER_SRC = checker.c\
 	swap.c\
 	rotate.c\
+	more_rotate.c\
 	push.c\
+	more_push.c\
 	helper_funcs.c\
 	more_helper_funcs.c\
-	parse.c
+	parse.c\
+	small_algorithm.c
 # PUSH_SWAP_SRC = push_swap.c
 # 	$(SRC)
 # CHECKER_SRC = checker.c
@@ -35,13 +41,13 @@ CHECKER_SRC = checker.c\
 
 .PHONY: test library all clean fclean re
 
+all: library $(PUSH_SWAP) $(CHECKER)
+
 test:
 	@rm checker
 	@rm push_swap
 	@gcc $(FLAGS) -o $(PUSH_SWAP) $(SRC) $(LIBFT)
 	@gcc $(FLAGS) -o $(CHECKER) $(CHECKER_SRC) $(LIBFT)
-
-all: library $(PUSH_SWAP) $(CHECKER)
 
 library:
 	@cd libft/ && make
